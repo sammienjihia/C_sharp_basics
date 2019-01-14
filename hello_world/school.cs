@@ -18,5 +18,22 @@ namespace hello_world
 
         }
 
+        
+
     }
+    class Teacher
+        {
+            public int teacher_id;
+            public string teacher_name;
+            public int teacher_phone;
+            
+            public Teacher(int teacherId, string teacherName, int teacherPhone)
+            {
+                teacher_id = teacherId;
+                teacher_name = teacherName;
+                teacher_phone = teacherPhone;
+
+            }
+
+        }
 }
