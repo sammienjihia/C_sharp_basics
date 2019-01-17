@@ -3,7 +3,11 @@ using hello_world;
 
 namespace hello_world
 {
-    class Program
+    class ToBeInherited
+    {
+        protected string name_ofstring = "This string is protected in class ToBeInherited()"; 
+    }
+    class Program:ToBeInherited
     {
         static void Main(string[] args)
         {
@@ -47,14 +51,19 @@ namespace hello_world
             Console.WriteLine(message.print_message());
             Console.WriteLine(message.new_string2);
 
+            // how to access a protected type from an inherited class
+            Program p = new Program();
+            
+            Console.WriteLine(p.name_ofstring);
+
+            
+        
+
 
         }
     }
 
-    class ToBeInherited
-    {
-        protected string name_ofstring = "This string is protected in class ToBeInherited()"; 
-    }
+    
 
 
     // class Access_modifiers inherits from class ToBeInherited
@@ -76,13 +85,6 @@ namespace hello_world
         }
 
         public string new_string2 = "This is a public string";
-
-        // how to access a protected type from an inherited class
-        
-        
-        
-
-        
 
     }
 
