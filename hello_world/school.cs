@@ -36,4 +36,18 @@ namespace hello_world
             }
 
         }
+
+    class  Uprogram
+    {
+        internal string program_name;
+        internal string department_head;
+        internal string dgree;
+        internal string[] marks = {"pass", "fail"};
+        public Uprogram(string p_name, string d_head, string degree)
+        {
+             program_name= p_name;
+             department_head = d_head;
+             dgree = degree;
+        }
+    }
 }
