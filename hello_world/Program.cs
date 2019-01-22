@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using hello_world;
 
 namespace hello_world
@@ -6,6 +7,7 @@ namespace hello_world
     class ToBeInherited
     {
         protected string name_ofstring = "This string is protected in class ToBeInherited()"; 
+        
     }
     class Program:ToBeInherited
     {
@@ -42,7 +44,7 @@ namespace hello_world
             teacher1.teacher_name, teacher1.teacher_phone);
             Console.WriteLine(for_loop.exponentialG());
 
-            for (int i = 0; i<5; i++)
+            for (int i = 0; i<2; i++)
             {
                 Console.WriteLine("\n");
             }
@@ -56,18 +58,85 @@ namespace hello_world
             
             Console.WriteLine(p.name_ofstring);
 
-            
-        
+            // this class is in the school.cs file
+            hello_world.Uprogram uniProgram = new Uprogram("Computer science", "Mr. Raketic", "Honors");
+            Console.WriteLine(uniProgram.program_name);
 
+            //accessing an array variable
+            Console.WriteLine(uniProgram.marks[0]);
+
+            var many_marks = uniProgram.marks;
+
+            int counter = 1;
+
+            // foreach (var item in collection)
+            // {
+                
+            // }
+
+            // foreach statement in c# is simillar to for x in y
+
+            foreach (string mark in many_marks)
+            {
+                Console.WriteLine("iteration {1} in foreeach {1}",mark, counter);
+                counter ++;
+
+            }
+
+            // declaring and initialising and array and a list
+
+            // 1. Declaring and initiasing  an array of string type
+            string[] names = {"sammy", "faven", "anthony", "claire"};
+
+            // declaring and initialising a List data type which is in the 
+            // System.Collections.Generic package
+            var locations = new List<string>();
+            locations.Add("Malindi");
+            locations.Add("Nairobi");
+            locations.Add("Davos");
+            print_names(names);
+            print_locations(locations);
 
         }
+
+        /*
+        1. public means the method is globally accessible(public is an access identifier)
+
+        2. the keyword static means the method can be called without creating an instance of
+           the class that it belongs to
+        3. the keyword void simply means the method does not return anything
+         */ 
+
+         // utilising a for loop in the below function. Notice how my output code looks like
+        public static void print_names(string[] arr)
+            {
+                for (int i=0 ; i<arr.Length; i++ )
+                {
+                    // output code
+                    Console.WriteLine($"Element{i}: Name {arr[i]}");
+                }
+            }
+
+        // utilising a foreach statement here. Notice my output code
+        public static void print_locations(List<string> arr)
+        {
+            int counter = 1;
+            foreach (var item in arr)
+            {
+                // output code
+                Console.WriteLine("Location {0}: {1}", counter, item);
+                counter++;
+                
+            }
+        }
     }
+
 
     
 
 
     // class Access_modifiers inherits from class ToBeInherited
-    class Access_modifiers : ToBeInherited
+    class Access_modifiers 
     {
         internal string my_message = "This is a string variable";
         /* 
